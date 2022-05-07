@@ -12,9 +12,9 @@ Repositorio para salvar as soluções dos exercicios de SQL disponibilizados pel
 |:--:|:--:|:--:|:--:|:--:|
 | Name | img | statusMark | RepoLink | SiteLink | -->
 
-|          Lista           |            Status            |                                Lista resolvida                                 |
-| :----------------------: | :--------------------------: | :----------------------------------------------------------------------------: |
-| Lista 01 - SELECT básico | Resolvendo... :construction: | [Site](https://portfolio-six-flax.vercel.app/3-column-preview-card-component/) |
+|          Lista           |            Status            |                                            Lista resolvida                                            |
+| :----------------------: | :--------------------------: | :---------------------------------------------------------------------------------------------------: |
+| Lista 01 - SELECT básico | Resolvendo... :construction: | [Lista](https://github.com/filiphis/exercicios-sql/blob/main/basic-SELECT-statement-19-exercises.sql) |
 
 ## Autor
 
