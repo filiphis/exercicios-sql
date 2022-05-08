@@ -12,9 +12,11 @@ Repositorio para salvar as soluções dos exercicios de SQL disponibilizados pel
 |:--:|:--:|:--:|:--:|:--:|
 | Name | img | statusMark | RepoLink | SiteLink | -->
 
-|          Lista           |             Status             |                                            Lista resolvida                                            |
-| :----------------------: | :----------------------------: | :---------------------------------------------------------------------------------------------------: |
-| Lista 01 - SELECT básico | Finalizada! :heavy_check_mark: | [Lista](https://github.com/filiphis/exercicios-sql/blob/main/basic-SELECT-statement-19-exercises.sql) |
+|                     Lista                     |             Status             |                                            Lista resolvida                                            |
+| :-------------------------------------------: | :----------------------------: | :---------------------------------------------------------------------------------------------------: |
+|           Lista 01 - SELECT básico            | Finalizada! :heavy_check_mark: | [Lista](https://github.com/filiphis/exercicios-sql/blob/main/basic-SELECT-statement-19-exercises.sql) |
+|           :----------------------:            | :----------------------------: | :---------------------------------------------------------------------------------------------------: |
+| Lista 02 - Restringindo e Classificando Dados |  Em andamento :construction:   | [Lista](https://github.com/filiphis/exercicios-sql/blob/main/basic-SELECT-statement-19-exercises.sql) |
 
 ## Autor
 
