@@ -121,7 +121,7 @@ SELECT
 FROM
 	employees
 WHERE
-	LAST_NAME IN ('JONES', 'BLAKE', 'SCOTT', 'KING', 'FORD')
+	LAST_NAME IN ('JONES', 'BLAKE', 'SCOTT', 'KING', 'FORD') 
 ;
 
 
