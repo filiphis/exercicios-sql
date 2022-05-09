@@ -115,7 +115,7 @@ FROM
 ;
 
 
--- 11) Escreva uma consulta para selecionar todos os registros de funcionários cujo (last_name) contenha 'JONES', 'BLAKE', 'SCOTT', 'KING' e 'FORD'.
+-- 11) Escreva uma consulta para selecionar todos os registros de funcionários cujo (last_name) contenha 'JONES', 'BLAKE', 'SCOTT', 'KING' e 'FORD' .
 SELECT
 	*
 FROM
