@@ -5,8 +5,8 @@
 -- 1) Escreva uma consulta para exibir (first_name, last_name, salary) de todos os funcionários cujo salário não esteja no intervalo de US$ 10.000 a US$ 15.000
 SELECT
 	FIRST_NAME,
-  LAST_NAME,
-  SALARY
+  	LAST_NAME,
+  	SALARY
 FROM
 	employees
 WHERE
@@ -17,8 +17,8 @@ WHERE
 -- 2) Escreva uma consulta para exibir o nome (first_name, last_name, department_id) de todos os funcionários nos departamentos 30 ou 100 em ordem crescente.
 SELECT
 	FIRST_NAME,
-  LAST_NAME,
-  DEPARTMENT_ID
+  	LAST_NAME,
+  	DEPARTMENT_ID
 FROM
 	employees
 WHERE
@@ -31,9 +31,9 @@ ORDER BY
 -- 3) Escreva uma consulta para exibir o nome (first_name, last_name, salary)de todos os funcionários cujo salário não esteja na faixa de US$ 10.000 a US$ 15.000 e estejam no departamento 30 ou 100.
 SELECT
 	FIRST_NAME,
-  LAST_NAME,
-  SALARY,
-  DEPARTMENT_ID
+  	LAST_NAME,
+  	SALARY,
+  	DEPARTMENT_ID
 FROM
 	employees
 WHERE
@@ -44,8 +44,8 @@ WHERE
 -- 4) Escreva uma consulta para exibir o nome (first_name, last_name, hire_date) e a data de contratação de todos os funcionários que foram contratados em 1987
 SELECT
 	FIRST_NAME,
-  LAST_NAME,
-  HIRE_DATE
+  	LAST_NAME,
+  	HIRE_DATE
 FROM
 	employees
 WHERE
@@ -66,13 +66,13 @@ WHERE
 -- 6) Escreva uma consulta para exibir o (last name, job, and salary) de todos os funcionários cujo cargo seja (Programmer or a Shipping Clerk) e cujo salário não seja igual a US$ 4.500, US$ 10.000 ou US$ 15.000.
 SELECT
 	LAST_NAME,
-  JOB_ID,
-  SALARY
+  	JOB_ID,
+  	SALARY
 FROM
 	employees
 WHERE
 	(JOB_ID IN('IT_PROG', 'SH_CLERK'))
-  AND SALARY NOT IN(4500, 10000, 15000)
+  	AND SALARY NOT IN(4500, 10000, 15000)
 ;
 
 
@@ -107,9 +107,9 @@ FROM
 -- 10) Escreva uma consulta para exibir o nome (first_name, last_name, salary ) e PF (15% do salário) de todos os funcionários.
 SELECT
 	FIRST_NAME,
-  LAST_NAME,
-  SALARY,
-  ( SALARY * 0.15) AS 'PF'
+  	LAST_NAME,
+  	SALARY,
+  	( SALARY * 0.15) AS 'PF'
 FROM
 	employees
 ;
