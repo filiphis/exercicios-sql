@@ -31,9 +31,9 @@ ORDER BY
 -- 4) Escreva uma consulta para obter os nomes (first_name, last_name, salary and PF), de todos os funcionários (PF é calculado como 15% do salário).
 SELECT
 	FIRST_NAME,
-  LAST_NAME,
-  SALARY,
-  (SALARY * 0.15)
+  	LAST_NAME,
+  	SALARY,
+  	(SALARY * 0.15)
 FROM
 	employees
 ;
@@ -42,9 +42,9 @@ FROM
 -- 5) Escreva uma consulta para obter (employee ID, first_name, last_name and salary), o salário deverá estar em ordem crescente.
 SELECT
 	EMPLOYEE_ID,
-  FIRST_NAME,
-  LAST_NAME,
-  SALARY
+  	FIRST_NAME,
+  	LAST_NAME,
+  	SALARY
 FROM
 	employees
 ORDER BY
@@ -62,8 +62,8 @@ FROM
 
 -- 7) Escreva uma consulta para obter o salário máximo e mínimo da tabela de funcionários.
 SELECT
-  MAX(SALARY) AS "Salário máximo",
-  MIN(SALARY) AS "Salário mínimo"
+  	MAX(SALARY) AS "Salário máximo",
+  	MIN(SALARY) AS "Salário mínimo"
 FROM
 	employees
 ;
@@ -72,7 +72,7 @@ FROM
 -- 8) Escreva uma consulta para obter o salário médio e o número de funcionários na tabela employees
 SELECT
 	AVG(SALARY) AS "Salário médio",
-  COUNT(*) AS "Total funcionários"
+  	COUNT(*) AS "Total funcionários"
 FROM
 	employees
 ;
@@ -105,7 +105,7 @@ FROM
 -- 12) Escreva uma consulta para obter os 3 primeiros caracteres do primeiro nome da tabela de funcionários.
 SELECT
 	SUBSTRING(FIRST_NAME, 1, 3),
-  FIRST_NAME
+  	FIRST_NAME
 FROM
 	employees
 LIMIT
@@ -119,7 +119,7 @@ SELECT (171 * 214 + 625) AS "Calc";
 
 -- 14) Escreva uma consulta para obter os nomes (por exemplo, Ellen Abel, Sundar Ande etc.) de todos os funcionários da tabela de funcionários.
 SELECT
-  CONCAT(FIRST_NAME, " ", LAST_NAME) AS "Nome completo"
+  	CONCAT(FIRST_NAME, " ", LAST_NAME) AS "Nome completo"
 FROM
 	employees
 ;
@@ -136,8 +136,8 @@ FROM
 -- 16) Escreva uma consulta para obter o comprimento dos nomes dos funcionários (first_name, last_name) da tabela de funcionários.
 SELECT
 	FIRST_NAME,
-  LAST_NAME,
-  LENGTH(CONCAT(FIRST_NAME,LAST_NAME))
+  	LAST_NAME,
+  	LENGTH(CONCAT(FIRST_NAME,LAST_NAME))
 FROM
 	employees
 ;
@@ -147,7 +147,7 @@ FROM
 -- Minha solução : kkkkkkkkk
 SELECT
 	FIRST_NAME,
-  REPLACE(REPLACE((FIRST_NAME REGEXP '[0-9]'), '1', 'Sim'), '0', 'Não') AS "Possui numero ?"
+  	REPLACE(REPLACE((FIRST_NAME REGEXP '[0-9]'), '1', 'Sim'), '0', 'Não') AS "Possui numero ?"
 FROM
 	employees
 ;
@@ -172,7 +172,7 @@ LIMIT
 -- 19) Escreva uma consulta para obter o salário mensal (cerca de 2 casas decimais) de cada funcionário. OBS: o campo de salário fornece as informações de salário anual.
 SELECT
 	FIRST_NAME,
-  ROUND((SALARY / 12), 2) AS "Salário mensal"
+  	ROUND((SALARY / 12), 2) AS "Salário mensal"
 FROM
 	employees
 ;
