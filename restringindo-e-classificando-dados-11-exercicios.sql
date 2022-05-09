@@ -1,5 +1,5 @@
 -- Lista 02 - Restringindo e Classificando dados [11 exercícios]
--- Link: https://www.w3resource.com/mysql-exercises/restricting-and-sorting-data-exercises/
+-- Link: https://www.w3resource.com/mysql-exercises/restricting-and-sorting-data-exercises/ 
 
 
 -- 1) Escreva uma consulta para exibir (first_name, last_name, salary) de todos os funcionários cujo salário não esteja no intervalo de US$ 10.000 a US$ 15.000
