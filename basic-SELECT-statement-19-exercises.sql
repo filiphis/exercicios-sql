@@ -1,4 +1,5 @@
--- SELECT básico [19 exercícios]
+-- Lista 01 - SELECT básico [19 exercícios]
+-- Link: https://www.w3resource.com/mysql-exercises/basic-simple-exercises/
 
 -- 1) Escreva uma consulta para exibir os nomes (first_name, last_name) da tabela employees usando os alias "First Name", "Last Name". 
 SELECT
