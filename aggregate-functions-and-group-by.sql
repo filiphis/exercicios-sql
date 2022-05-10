@@ -28,7 +28,7 @@ FROM
 -- 4) Escreva uma consulta para obter o maior salário de um funcionário que trabalha como programador.
 SELECT
 	FIRST_NAME,
-    JOB_ID,
+    	JOB_ID,
 	MAX(SALARY) AS 'Maior salário de um programador'
 FROM
 	employees
