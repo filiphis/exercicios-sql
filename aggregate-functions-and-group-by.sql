@@ -40,7 +40,7 @@ WHERE
 -- 5) Escreva uma consulta para obter o salário médio e o número de funcionários que trabalham no departamento 90.
 SELECT
 	COUNT(*) AS 'Quantidade de funcionários do departamento 90',
-    AVG(SALARY) AS 'Salário médiode dos funcionários do departamento 90'
+    	AVG(SALARY) AS 'Salário médiode dos funcionários do departamento 90'
 FROM
 	employees
 WHERE
@@ -51,9 +51,9 @@ WHERE
 -- 6) Escreva uma consulta para obter o salário mais alto, mais baixo, a soma e a média de todos os funcionários
 SELECT
 	MAX(SALARY) AS  'Salário mais alto',
-    MIN(SALARY) AS  'Salário mais baixo',
-    SUM(SALARY) AS  'Soma de todos os salários',
-    AVG(SALARY) AS  'Média salarial'
+    	MIN(SALARY) AS  'Salário mais baixo',
+    	SUM(SALARY) AS  'Soma de todos os salários',
+    	AVG(SALARY) AS  'Média salarial'
 FROM
 	employees
 ;
@@ -81,7 +81,7 @@ FROM
 -- 9) Escreva uma consulta para localizar o ID do gerente e o salário do funcionário com o salário mais baixo desse gerente.
 SELECT
 	MANAGER_ID,
-    MIN(SALARY) AS 'Menor salario dos funcionário deste gerente'
+    	MIN(SALARY) AS 'Menor salario dos funcionário deste gerente'
 FROM
 	employees
 GROUP BY
@@ -92,7 +92,7 @@ GROUP BY
 -- 10) Escreva uma consulta para obter o ID do departamento e o salário total a pagar em cada departamento
 SELECT
 	DEPARTMENT_ID,
-    SUM(SALARY) AS 'Salários a pagar'
+    	SUM(SALARY) AS 'Salários a pagar'
 FROM
 	employees
 GROUP BY
@@ -103,7 +103,7 @@ GROUP BY
 -- 11) Escreva uma consulta para obter o salário médio de cada ID de trabalho (JOB_ID), excluindo os de programadores (IT_PROG).
 SELECT
 	JOB_ID,
-    AVG(SALARY) AS 'Salário médio do cargo'
+    	AVG(SALARY) AS 'Salário médio do cargo'
 FROM
 	employees
 WHERE
@@ -116,11 +116,11 @@ GROUP BY
 -- 12) Escreva uma consulta para obter o salário total, máximo, mínimo e salário médio dos funcionários (JOB_ID), apenas para o (DEPARTMENT_ID) 90
 SELECT
 	JOB_ID,
-    DEPARTMENT_ID,
-    SUM(SALARY),
-    MAX(SALARY),
-    MIN(SALARY),
-    AVG(SALARY)
+    	DEPARTMENT_ID,
+    	SUM(SALARY),
+    	MAX(SALARY),
+    	MIN(SALARY),
+    	AVG(SALARY)
 FROM
 	employees
 WHERE
@@ -133,7 +133,7 @@ GROUP BY
 -- 13) Escreva uma consulta para obter o ID do cargo (JOB_ID) e o salário máximo dos funcionários em que o salário máximo é maior ou igual a US$ 4.000
 SELECT
 	JOB_ID,
-    MAX(SALARY)
+    	MAX(SALARY)
 FROM
 	employees
 GROUP BY
@@ -146,8 +146,8 @@ HAVING
 -- 14 ) Escreva uma consulta para obter o salário médio de todos os departamentos que empregam mais de 10 funcionários.
 SELECT
 	DEPARTMENT_ID,
-    COUNT(*),
-    AVG(SALARY)
+    	COUNT(*),
+    	AVG(SALARY)
 FROM
 	employees
 GROUP BY
