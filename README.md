@@ -17,6 +17,7 @@ Repositorio para salvar as soluções dos exercicios de SQL disponibilizados pel
 |           Lista 01 - SELECT básico            | Finalizada! :heavy_check_mark: |       [Lista](https://github.com/filiphis/exercicios-sql/blob/main/basic-SELECT-statement-19-exercises.sql)        |
 | Lista 02 - Restringindo e Classificando Dados | Finalizada! :heavy_check_mark: | [Lista](https://github.com/filiphis/exercicios-sql/blob/main/restringindo-e-classificando-dados-11-exercicios.sql) |
 |  Lista 03 - Funções de Agregação e Group By   | Finalizada! :heavy_check_mark: |         [Lista](https://github.com/filiphis/exercicios-sql/blob/main/aggregate-functions-and-group-by.sql)         |
+|              Lista 04 - Subquery              |  Em andamento :construction:   |                     [Lista](https://github.com/filiphis/exercicios-sql/blob/main/subquery.sql)                     |
 
 ## Autor
 

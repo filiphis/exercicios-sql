@@ -1,0 +1,2 @@
+-- Lista 04 - Subquery [22 exercícios]
+-- Link: https://www.w3resource.com/mysql-exercises/subquery-exercises/
