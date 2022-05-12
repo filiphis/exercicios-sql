@@ -240,16 +240,6 @@ WHERE
 
 -- 16) Faça uma consulta para encontrar o 5º salário máximo na tabela de funcionários.
 -- 16) Write a query to find the 5th maximum salary in the employees table.
-SET @i = 0;
-SELECT
-	i,
-    SALARY
-FROM
-	(SELECT @i := @i + 1 AS i, SALARY FROM employees) a
-ORDER BY
-	SALARY DESC
-;
-
 
 
 
