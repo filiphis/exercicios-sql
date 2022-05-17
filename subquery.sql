@@ -4,8 +4,8 @@
 -- 1) Escreva uma consulta para encontrar o nome (first_name, last_name) e o salário (salary) dos funcionários que têm um salário mais alto do que o funcionário cujo last_name é 'Bull'.
 SELECT
 	FIRST_NAME,
-    LAST_NAME,
-    SALARY
+    	LAST_NAME,
+    	SALARY
 FROM
 	employees
 WHERE
@@ -16,7 +16,7 @@ WHERE
 -- 2) Escreva uma consulta para encontrar o nome (first_name, last_name) de todos os funcionários que trabalham no departamento de TI
 SELECT
 	FIRST_NAME,
-    LAST_NAME
+    	LAST_NAME
 FROM
 	employees
 WHERE
@@ -27,9 +27,9 @@ WHERE
 -- 3) Escreva uma consulta para encontrar o nome (first_name, last_name) dos funcionários que têm um gerente e trabalharam em um departamento com sede nos EUA.
 SELECT
 	employees.FIRST_NAME,
-    employees.LAST_NAME,
-    departments.LOCATION_ID,
-    locations.COUNTRY_ID
+    	employees.LAST_NAME,
+    	departments.LOCATION_ID,
+    	locations.COUNTRY_ID
 FROM
 	employees 
 JOIN
@@ -50,8 +50,8 @@ WHERE
 -- Minha solução:
 SELECT
 	employees.FIRST_NAME,
-    employees.LAST_NAME,
-    jobs.JOB_TITLE
+    	employees.LAST_NAME,
+    	jobs.JOB_TITLE
     
 FROM
 	employees
@@ -73,8 +73,8 @@ WHERE (employee_id IN (SELECT manager_id FROM employees));
 -- 5) Escreva uma consulta para localizar o nome (first_name, last_name, salary) e o salário dos funcionários cujo salário é maior que o salário médio.
 SELECT
 	FIRST_NAME,
-    LAST_NAME,
-    SALARY
+    	LAST_NAME,
+    	SALARY
 FROM
 	employees
 WHERE
@@ -85,10 +85,10 @@ WHERE
 -- 6) Escreva uma consulta para encontrar o nome (first_name, last_name, salary) e o salário dos funcionários cujo salário é igual ao salário mínimo para a categoria de trabalho.
 SELECT
 	employees.FIRST_NAME,
-    employees.LAST_NAME,
-    employees.JOB_ID,
-    employees.SALARY,
-    jobs.MIN_SALARY
+    	employees.LAST_NAME,
+    	employees.JOB_ID,
+    	employees.SALARY,
+    	jobs.MIN_SALARY
 FROM
 	employees
 JOIN
@@ -102,9 +102,9 @@ WHERE
 -- 7) Escreva uma consulta para encontrar (first_name, last_name, salary) dos funcionários que ganham mais do que o salário médio e trabalham em qualquer um dos departamentos de TI.
 SELECT
 	employees.FIRST_NAME,
-    employees.LAST_NAME,
-    employees.SALARY,
-    departments.DEPARTMENT_NAME
+    	employees.LAST_NAME,
+    	employees.SALARY,
+    	departments.DEPARTMENT_NAME
 FROM
 	employees
 JOIN
@@ -119,8 +119,8 @@ WHERE
 -- 8) Escreva uma consulta para encontrar (first_name, last_name, salary) dos funcionários que ganham mais do que o funcionário cujo sobrenome é Bell.
 SELECT
 	FIRST_NAME,
-    LAST_NAME,
-    SALARY
+    	LAST_NAME,
+    	SALARY
 FROM
 	employees
 WHERE
@@ -133,8 +133,8 @@ ORDER BY
 -- 9) Escreva uma consulta para localizar o (first_name, last_name, salary) dos funcionários que recebem o mesmo salário que o salário mínimo de todos os departamentos.
 SELECT
 	FIRST_NAME,
-    LAST_NAME,
-    SALARY
+    	LAST_NAME,
+    	SALARY
 FROM
 	employees
 WHERE
@@ -145,8 +145,8 @@ WHERE
 -- 10) Escreva uma consulta para localizar o  (first_name, last_name, salary) dos funcionários cujo salário é maior que o salário médio de todos os departamentos.
 SELECT
 	FIRST_NAME,
-    LAST_NAME,
-    SALARY
+    	LAST_NAME,
+    	SALARY
 FROM
 	employees
 WHERE
@@ -158,8 +158,8 @@ WHERE
 -- Classifique os resultados do salário do menor para o maior.
 SELECT
 	FIRST_NAME,
-    LAST_NAME,
-    SALARY
+    	LAST_NAME,
+    	SALARY
 FROM
 	employees
 WHERE 
@@ -173,7 +173,7 @@ ORDER BY
 -- Minha solução
 SELECT
 	FIRST_NAME,
-    LAST_NAME
+    	LAST_NAME
 FROM
 	employees
 WHERE
@@ -196,12 +196,12 @@ ORDER BY FIRST_NAME
 -- Minha solução
 SELECT
 	e.EMPLOYEE_ID,
-    e.FIRST_NAME,
-    e.LAST_NAME,
-    d.DEPARTMENT_NAME
+    	e.FIRST_NAME,
+    	e.LAST_NAME,
+    	d.DEPARTMENT_NAME
 FROM
 	employees AS e,
-    departments AS d
+    	departments AS d
 WHERE
 	e.DEPARTMENT_ID = d.DEPARTMENT_ID
 ORDER BY
@@ -211,9 +211,9 @@ ORDER BY
 -- Solução do site
 SELECT 
 	employee_id, 
-    first_name, 
-    last_name, 
-    (SELECT department_name FROM departments d WHERE e.department_id = d.department_id) department 
+    	first_name, 
+    	last_name, 
+    	(SELECT department_name FROM departments d WHERE e.department_id = d.department_id) department 
 FROM 
 	employees e 
 ORDER BY 
@@ -225,9 +225,9 @@ ORDER BY
 -- 14) Write a query to display the employee ID, first name, last name, salary of all employees whose salary is above average for their departments
 SELECT
 	EMPLOYEE_ID,
-    FIRST_NAME,
-    LAST_NAME,
-    SALARY
+    	FIRST_NAME,
+    	LAST_NAME,
+    	SALARY
 FROM
 	employees AS e
 WHERE
@@ -276,9 +276,7 @@ SELECT
 FROM
 	employees
 ORDER BY
-	SALARY ASC
-LIMIT 1
-OFFSET 3
+	SALARY ASC LIMIT 1 OFFSET 3
 ;
 
 
