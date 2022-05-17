@@ -209,7 +209,15 @@ ORDER BY
 ;
 
 -- Solução do site
-SELECT employee_id, first_name, last_name, (SELECT department_name FROM departments d WHERE e.department_id = d.department_id) department FROM employees e ORDER BY department;
+SELECT 
+	employee_id, 
+    first_name, 
+    last_name, 
+    (SELECT department_name FROM departments d WHERE e.department_id = d.department_id) department 
+FROM 
+	employees e 
+ORDER BY 
+	department;
 -- Link: https://www.w3resource.com/mysql-exercises/subquery-exercises/write-a-query-to-display-the-employee-id-first-name-last-names-and-department-names-of-all-employees.php
 
 
@@ -269,20 +277,53 @@ FROM
 	employees
 ORDER BY
 	SALARY ASC
+LIMIT 1
+OFFSET 3
 ;
 
 
+-- 18) Escreva uma consulta para selecionar os últimos 10 registros de uma tabela
+-- 18) Write a query to select last 10 records from a table.
+-- Minha solução:
+SELECT 
+	*
+FROM 
+	employees
+ORDER BY
+	EMPLOYEE_ID DESC
+    LIMIT 10
+;
+-- Solução do site:
+SELECT * FROM ( SELECT * FROM employees ORDER BY employee_id DESC LIMIT 10) sub 
+ORDER BY employee_id ASC;
 
 
+-- 19) Escreva uma consulta para listar o ID do departamento e o nome de todos os departamentos onde nenhum funcionário está trabalhando.
+-- 19) Write a query to list the department ID and name of all the departments where no employee is working.
+SELECT
+	*
+FROM
+	departments
+WHERE
+	DEPARTMENT_ID NOT IN(SELECT DEPARTMENT_ID FROM employees)
+;
 
 
+-- 20) Escreva uma consulta para obter 3 salários máximos.
+-- 20) Write a query to get 3 maximum salaries.
+SELECT
+	*
+FROM
+	(SELECT DISTINCT SALARY FROM employees LIMIT 3) maxSalary
+ORDER BY
+	SALARY DESC
+;
 
 
-
-
-
-
-
-
-
-
+-- 21) Faça uma consulta para obter 3 salários mínimos
+-- 21) Write a query to get 3 minimum salaries
+SELECT
+	*
+FROM
+	(SELECT DISTINCT SALARY FROM employees ORDER BY SALARY ASC LIMIT 3) min_salaries
+;
