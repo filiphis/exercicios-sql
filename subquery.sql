@@ -240,6 +240,41 @@ WHERE
 
 -- 16) Faça uma consulta para encontrar o 5º salário máximo na tabela de funcionários.
 -- 16) Write a query to find the 5th maximum salary in the employees table.
+-- Minha solução:
+SELECT 
+	DISTINCT SALARY 
+FROM 
+	employees 
+ORDER BY 
+	SALARY DESC 
+LIMIT 1 
+OFFSET 4;
+
+-- Solução do site:
+SELECT 
+	DISTINCT salary 
+FROM 
+	employees e1 
+WHERE 
+	5 = (SELECT COUNT(DISTINCT salary) FROM employees  e2 WHERE e2.salary >= e1.salary)
+;
+-- Link: https://www.w3resource.com/mysql-exercises/subquery-exercises/write-a-query-to-find-the-5th-maximum-salary-in-the-employees-table.php
+
+
+-- 17) Faça uma consulta para encontrar o 4º salário mínimo na tabela de funcionários.
+-- 17) Write a query to find the 4th minimum salary in the employees table
+SELECT
+    DISTINCT SALARY
+FROM
+	employees
+ORDER BY
+	SALARY ASC
+;
+
+
+
+
+
 
 
 
