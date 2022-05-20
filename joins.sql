@@ -179,7 +179,7 @@ JOIN
 -- 10) Write a query to display the job title and average salary of employees.
 SELECT
 	jobs.JOB_TITLE,
-    ROUND(AVG(employees.SALARY), 2) AS 'Salário médio'
+    	ROUND(AVG(employees.SALARY), 2) AS 'Salário médio'
 FROM
 	jobs
 JOIN
