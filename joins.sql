@@ -8,19 +8,19 @@ show tables;
 SELECT
 	departments.LOCATION_ID,
 	departments.DEPARTMENT_NAME,
-    locations.STREET_ADDRESS,
-    locations.CITY,
-    locations.STATE_PROVINCE,
-    countries.COUNTRY_NAME 
+    	locations.STREET_ADDRESS,
+    	locations.CITY,
+    	locations.STATE_PROVINCE,
+    	countries.COUNTRY_NAME 
     
 FROM 
 	departments
 INNER JOIN 
 	locations
-    ON departments.LOCATION_ID = locations.LOCATION_ID
+    	ON departments.LOCATION_ID = locations.LOCATION_ID
 INNER JOIN
 	countries
-    ON locations.COUNTRY_ID = countries.COUNTRY_ID
+    	ON locations.COUNTRY_ID = countries.COUNTRY_ID
 ;
 -- Link solução do site: https://www.w3resource.com/mysql-exercises/join-exercises/write-a-query-to-find-the-addresses-of-all-the-departments.php
 
@@ -29,19 +29,15 @@ INNER JOIN
 -- 2) Write a query to find the name (first_name, last name), department ID and name of all the employees.
 SELECT
 	employees.FIRST_NAME,
-    employees.LAST_NAME,
-    employees.DEPARTMENT_ID,
-    departments.DEPARTMENT_NAME
+    	employees.LAST_NAME,
+    	employees.DEPARTMENT_ID,
+    	departments.DEPARTMENT_NAME
 FROM
 	employees
 INNER JOIN
 	departments
-    ON employees.DEPARTMENT_ID = departments.DEPARTMENT_ID
+    	ON employees.DEPARTMENT_ID = departments.DEPARTMENT_ID
 ;
-
-SELECT first_name, last_name, department_id, department_name 
-FROM employees 
-JOIN departments USING (department_id);
 -- Link solução do site: https://www.w3resource.com/mysql-exercises/join-exercises/write-a-query-to-find-the-names-department-id-and-name-of-all-the-employees.php
 
 
@@ -49,22 +45,22 @@ JOIN departments USING (department_id);
 -- 3) Write a query to find the name (first_name, last_name), job, department ID and name of the employees who works in London
 SELECT
 	employees.FIRST_NAME,
-    employees.LAST_NAME,
-    jobs.JOB_TITLE,
-    departments.DEPARTMENT_ID,
-    departments.DEPARTMENT_NAME,
-    locations.CITY
+    	employees.LAST_NAME,
+    	jobs.JOB_TITLE,
+    	departments.DEPARTMENT_ID,
+    	departments.DEPARTMENT_NAME,
+    	locations.CITY
 FROM
 	employees
 INNER JOIN
 	jobs
-    ON employees.JOB_ID = jobs.JOB_ID
+    	ON employees.JOB_ID = jobs.JOB_ID
 INNER JOIN
 	departments
-    ON employees.DEPARTMENT_ID = departments.DEPARTMENT_ID
+    	ON employees.DEPARTMENT_ID = departments.DEPARTMENT_ID
 INNER JOIN
 	locations
-    ON departments.LOCATION_ID = locations.LOCATION_ID
+    	ON departments.LOCATION_ID = locations.LOCATION_ID
 WHERE
 	locations.CITY = "London"
 ;
@@ -74,12 +70,12 @@ WHERE
 -- 4) Write a query to find the employee id, name (last_name) along with their manager_id and name (last_name).
 SELECT 
 	e.EMPLOYEE_ID AS employee_id, 
-    e.LAST_NAME AS employee_name, 
+    	e.LAST_NAME AS employee_name, 
 	m.EMPLOYEE_ID AS manager_id, 
-    m.LAST_NAME AS manager_name 
+    	m.LAST_NAME AS manager_name 
 FROM 
 	employees e,
-    employees m 
+    	employees m 
 WHERE 
 	e.MANAGER_ID = m.EMPLOYEE_ID
 ;
@@ -89,8 +85,8 @@ WHERE
 -- 5) Write a query to find the name (first_name, last_name) and hire date of the employees who was hired after 'Jones'
 SELECT
 	FIRST_NAME,
-    LAST_NAME,
-    HIRE_DATE
+    	LAST_NAME,
+    	HIRE_DATE
 FROM
 	employees
 WHERE
@@ -101,12 +97,12 @@ ORDER BY
 
 SELECT
 	a.FIRST_NAME,
-    a.LAST_NAME,
-    a.HIRE_DATE,
-    b.HIRE_DATE AS jones_hire_date
+    	a.LAST_NAME,
+    	a.HIRE_DATE,
+    	b.HIRE_DATE AS jones_hire_date
 FROM
 	employees a,
-    employees b
+    	employees b
 WHERE
 	a.HIRE_DATE > (SELECT b.HIRE_DATE WHERE b.LAST_NAME = "jones")
 ORDER BY
@@ -118,12 +114,12 @@ ORDER BY
 -- 6) Write a query to get the department name and number of employees in the department
 SELECT
 	departments.DEPARTMENT_NAME,
-    COUNT(employees.DEPARTMENT_ID)
+    	COUNT(employees.DEPARTMENT_ID)
 FROM
 	departments
 INNER JOIN
 	employees
-    ON departments.DEPARTMENT_ID = employees.DEPARTMENT_ID
+    	ON departments.DEPARTMENT_ID = employees.DEPARTMENT_ID
 GROUP BY
 	employees.DEPARTMENT_ID
 ORDER BY
@@ -135,14 +131,14 @@ ORDER BY
 -- 7) Write a query to find the employee ID, job title, number of days between ending date and starting date for all jobs in department 90 from job history
 SELECT
 	EMPLOYEE_ID,
-    job_history.JOB_ID,
-    (to_days(END_DATE) - to_days(START_DATE) ) AS 'Dias trabalhados',
-    JOB_TITLE
+    	job_history.JOB_ID,
+    	(to_days(END_DATE) - to_days(START_DATE) ) AS 'Dias trabalhados',
+    	JOB_TITLE
 FROM
 	job_history
 JOIN
 	jobs
-    ON job_history.JOB_ID = jobs.JOB_ID
+    	ON job_history.JOB_ID = jobs.JOB_ID
 WHERE
 	DEPARTMENT_ID = 90
 ;
@@ -152,13 +148,13 @@ WHERE
 -- 8) Write a query to display the department ID and name and first name of manager
 SELECT
 	departments.DEPARTMENT_ID,
-    departments.DEPARTMENT_NAME,
-    employees.FIRST_NAME AS 'Manager'
+    	departments.DEPARTMENT_NAME,
+    	employees.FIRST_NAME AS 'Manager'
 FROM
 	departments
 JOIN
 	employees
-    ON departments.MANAGER_ID = employees.EMPLOYEE_ID
+    	ON departments.MANAGER_ID = employees.EMPLOYEE_ID
 ;
 
 
@@ -166,16 +162,16 @@ JOIN
 -- 9) Write a query to display the department name, manager name, and city
 SELECT
 	departments.DEPARTMENT_NAME,
-    employees.FIRST_NAME AS 'Manager',
-    locations.CITY
+    	employees.FIRST_NAME AS 'Manager',
+    	locations.CITY
 FROM
 	departments
 JOIN
 	employees
-    ON departments.MANAGER_ID = employees.EMPLOYEE_ID
+    	ON departments.MANAGER_ID = employees.EMPLOYEE_ID
 JOIN
 	locations
-    ON departments.LOCATION_ID = locations.LOCATION_ID
+    	ON departments.LOCATION_ID = locations.LOCATION_ID
 ;
 
 
@@ -188,7 +184,7 @@ FROM
 	jobs
 JOIN
 	employees
-    ON jobs.JOB_ID = employees.JOB_ID
+    	ON jobs.JOB_ID = employees.JOB_ID
 GROUP BY
 	employees.JOB_ID
 ORDER BY
@@ -200,15 +196,15 @@ ORDER BY
 -- 11) Write a query to display job title, employee name, and the difference between salary of the employee and minimum salary for the job
 SELECT
 	jobs.JOB_TITLE,
-    employees.FIRST_NAME,
-    employees.SALARY,
-    jobs.MIN_SALARY AS 'Menor salário da função',
-    (employees.SALARY - jobs.MIN_SALARY) AS 'Diferença com o menor salário'
+    	employees.FIRST_NAME,
+    	employees.SALARY,
+    	jobs.MIN_SALARY AS 'Menor salário da função',
+    	(employees.SALARY - jobs.MIN_SALARY) AS 'Diferença com o menor salário'
 FROM
 	employees
 JOIN
 	jobs
-    ON employees.JOB_ID = jobs.JOB_ID
+    	ON employees.JOB_ID = jobs.JOB_ID
 ;
 
 
@@ -220,7 +216,7 @@ FROM
 	job_history
 JOIN
 	employees
-    ON job_history.EMPLOYEE_ID = employees.EMPLOYEE_ID
+    	ON job_history.EMPLOYEE_ID = employees.EMPLOYEE_ID
 WHERE
 	employees.SALARY > 10000
 ;
@@ -230,16 +226,16 @@ WHERE
 -- 13) Write a query to display department name, name (first_name, last_name), hire date, salary of the manager for all managers whose experience is more than 15 years
 SELECT
 	departments.DEPARTMENT_NAME,
-    employees.FIRST_NAME,
-    employees.LAST_NAME,
-    employees.HIRE_DATE,
-    employees.SALARY,
-    (YEAR(NOW()) - YEAR(employees.HIRE_DATE)) AS experiencia
+    	employees.FIRST_NAME,
+    	employees.LAST_NAME,
+    	employees.HIRE_DATE,
+    	employees.SALARY,
+    	(YEAR(NOW()) - YEAR(employees.HIRE_DATE)) AS experiencia
 FROM 
 	departments
 JOIN
 	employees
-    ON departments.MANAGER_ID = employees.EMPLOYEE_ID
+    	ON departments.MANAGER_ID = employees.EMPLOYEE_ID
 HAVING
 	experiencia > 15
 ;
